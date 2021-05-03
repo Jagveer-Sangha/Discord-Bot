@@ -5,7 +5,7 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 public class Invite extends ListenerAdapter {
 	
-	String url = "https://discord.com/oauth2/authorize?client_id=%s&scope=bot";
+	String url = "";
 	
 	@Override
 	//Can invite the bot to other servers

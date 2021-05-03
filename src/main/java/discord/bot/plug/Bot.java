@@ -49,32 +49,13 @@ public class Bot {
 		}
 	}
 
-	//Not needed
-	//List<GatewayIntent> gatewayIntents = new ArrayList<>();
-	//gatewayIntents.add(GatewayIntent.GUILD_MEMBERS);
-
-	/*WelcomeMessage welcomeMessage = new WelcomeMessage();
-		jdaBuilder.addEventListeners(welcomeMessage);
-
-		PingPong pingpong = new PingPong();
-		jdaBuilder.addEventListeners(pingpong);
-
-		Invite invite = new Invite();
-		jdaBuilder.addEventListeners(invite);
-		RoleReactions roleReactions = new RoleReactions();
-		jdaBuilder.addEventListeners(roleReactions);
-	 * 
-	 * Using the listeneradapter list and the addalleventlisters
-	 * Reduces the amount of code that is actually being used
-	 * looks nicer too
-	 */
 
 	//Can get the bot to send messages via console to any channel
 	public void botInitialized(){
 		//Use lambda expression so we don't have to create a class to show the code thats input
 		Thread thread = new Thread(() -> {
 			//Id of the general chat
-			TextChannel textChannel = jda.getTextChannelById(771891892677640265L);
+			TextChannel textChannel = jda.getTextChannelById();
 			while(true) {
 				Scanner scanner = new Scanner(System.in);
 				String message = scanner.nextLine();

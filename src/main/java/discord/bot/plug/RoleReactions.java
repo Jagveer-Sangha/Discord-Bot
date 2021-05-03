@@ -8,14 +8,14 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 public class RoleReactions extends ListenerAdapter {
 	
 	//sticking L at end turns it into a Long
-	 final long channelID = 772203854980448307L;
-	 final long roleID = 772204797826826280L;
+	 final long channelID = ;
+	 final long roleID = ;
 	 //To give specific roles based on emoji
 	 //HashMap<String, Long> reactionToRoleID = new HashMap<>();
 	 
 	 /*
 	 public RoleReactions() {
-		 reactionToRoleID.put(772203884390645760L, 772204797826826280L);//put specifc emoji
+		 reactionToRoleID.put(, );//put specifc emoji
 	 }
 	 */
 	 

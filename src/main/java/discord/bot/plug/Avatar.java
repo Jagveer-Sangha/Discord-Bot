@@ -10,19 +10,18 @@ import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.entities.User;
 
-
 public class Avatar extends ListenerAdapter {
 
 	@Override
 	public void onMessageReceived(MessageReceivedEvent e) {
-		if(e.getMessage().getContentRaw().startsWith("!avatar")) {
+		if (e.getMessage().getContentRaw().startsWith("!avatar")) {
 			List<Member> mentionedMembers = e.getMessage().getMentionedMembers();
-			
-			if(mentionedMembers.isEmpty()) {
+
+			if (mentionedMembers.isEmpty()) {
 				e.getChannel().sendMessage(createEmbed(e.getAuthor())).queue();
-				
-			}else {
-				
+
+			} else {
+
 				e.getChannel().sendMessage(createEmbed(mentionedMembers.get(0).getUser())).queue();
 			}
 		}

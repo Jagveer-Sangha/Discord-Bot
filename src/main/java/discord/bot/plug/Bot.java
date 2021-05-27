@@ -51,7 +51,7 @@ public class Bot {
 		// thats input
 		Thread thread = new Thread(() -> {
 			// Id of the general chat
-			TextChannel textChannel = jda.getTextChannelById();
+			TextChannel textChannel = jda.getTextChannelById(771891892677640265L);
 			while (true) {
 				Scanner scanner = new Scanner(System.in);
 				String message = scanner.nextLine();

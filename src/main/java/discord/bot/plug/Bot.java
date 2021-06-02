@@ -15,7 +15,8 @@ public class Bot {
 
 	ListenerAdapter[] listenerAdapters = new ListenerAdapter[] { new WelcomeMessage(), new PingPong(), new Invite(),
 			new RoleReactions(), new Avatar() };
-	String token, status;
+	String token;
+	String status;
 	JDA jda;
 
 	public Bot(String token, String status) {
@@ -58,7 +59,9 @@ public class Bot {
 				if (message != null && message != "" && message != "\n") {
 					textChannel.sendMessage(message).queue();
 				}
+				scanner.close();
 			}
+
 		});
 		thread.start();
 	}

@@ -16,7 +16,6 @@ public class Constants {
 	static Dotenv dotenv = Dotenv.configure().filename(".env").load();
 	// Retrieves API key from .env file
 	static String TOKEN = dotenv.get("DISCORD_BOT_TOKEN");
-	
-	static String BOTSTATUS = "Chillin";
+	static String BOT_STATUS = "Chillin";
 
 }

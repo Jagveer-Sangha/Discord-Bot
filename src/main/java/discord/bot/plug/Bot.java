@@ -54,15 +54,17 @@ public class Bot {
 		Thread thread = new Thread(() -> {
 			// Id of the general chat
 			TextChannel textChannel = jda.getTextChannelById(771891892677640265L);
-			while (true) {
+			boolean chatting = true;
+			while (chatting == true) {
 				Scanner scanner = new Scanner(System.in);
 				String message = scanner.nextLine();
 				if (message != null && message != "" && message != "\n") {
 					textChannel.sendMessage(message).queue();
 				} else {
+					chatting = false;
 					scanner.close();
-					break;
 				}
+
 			}
 		});
 		thread.start();

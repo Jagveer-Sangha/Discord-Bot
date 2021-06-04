@@ -25,10 +25,9 @@ public class Bot {
 		this.status = status;
 	}
 
-	// Just making the main look cleaner so chucked everything here
+	// Creates the discord bot object
 	public void build() {
 
-		// Can make a constants class and do Constants.TOKEN
 		JDABuilder jdaBuilder = JDABuilder.createDefault(token);
 		jdaBuilder.enableIntents(GatewayIntent.GUILD_MEMBERS, gatewayIntents);
 		jdaBuilder.addEventListeners(listenerAdapters);
@@ -43,21 +42,27 @@ public class Bot {
 			e.printStackTrace();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
-
 		}
 	}
 
-	// Can get the bot to send messages via console to any channel
+	/**
+	 * User has the ability to send personalized messages via the bot
+	 */
 	public void botInitialized() {
-		// Use lambda expression so we don't have to create a class to show the code
-		// thats input
+		// Utilized lambda expressions to create block of code
 		Thread thread = new Thread(() -> {
-			// Id of the general chat
+			// Bot gets access to the general chat
 			TextChannel textChannel = jda.getTextChannelById(771891892677640265L);
 			boolean chatting = true;
-			while (chatting == true) {
+
+			// Allows user to input messages that the bot outputs as text in the channel
+			while (chatting) {
 				Scanner scanner = new Scanner(System.in);
 				String message = scanner.nextLine();
+				// Ends program
+				if (message.equals("exit")) {
+					System.exit(0);
+				}
 				if (message != null && message != "" && message != "\n") {
 					textChannel.sendMessage(message).queue();
 				} else {
